@@ -1,5 +1,5 @@
 # Usage:
-# powershell.exe -File .\zz-zip.ps1 [-m] -f <folder>
+# PowerShell.exe -File .\zz-zip.ps1 [-m] -f <path>
 param([switch]$m, [string]$f="")
 $ver="1.0"
 $7z_path="$env:ProgramFiles\7-Zip\7z.exe"
@@ -59,10 +59,10 @@ if ($f_is_folder -or $f_is_file) {
 	Set-Alias 7z $7z_path
 	7z a "-t$zip_format" "-p$pw" $zip_target $zip_source
 
- # Create a TXT file contains the password.
+	# Create a TXT file contains the password.
 	Set-Content "$pw_file" $pw -NoNewline
 
- # Copy the password to clipboard.
+	# Copy the password to clipboard.
 	Set-Clipboard -Value $pw
 	Write-Host -Foregroundcolor Green `
 "
