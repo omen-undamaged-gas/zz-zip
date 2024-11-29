@@ -5,4 +5,4 @@
 install-zz-zip.cmd
 
 ## Command line usage
-powershell.exe -File .\zz-zip.ps1 [-m] -f &lt;foldera&gt;
+PowerShell.exe -File .\zz-zip.ps1 [-m] -f &lt;path&gt;
